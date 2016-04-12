@@ -338,18 +338,18 @@ public class AssetBundleManager : MonoBehaviour
         {
           yield return www;
           if(www.error != null) {
-            Debug.LogError("WWW download had an error:" + www.error);
+			Debug.LogError("WWW download had an error:" + www.error + " " + info.url);
             yield break;
           }
 
           AssetBundle bundle = www.assetBundle;
 
           //Parse asset bundle for character prefab
-          GameObject model = (GameObject)bundle.LoadAll(typeof(GameObject))[0];
-		  Debug.Log(bundle.LoadAll(typeof(GameObject)).Length + " models in bundle");
+		  GameObject model = (GameObject)bundle.LoadAllAssets(typeof(GameObject))[0];
+		  Debug.Log(bundle.LoadAllAssets(typeof(GameObject)).Length + " models in bundle");
 
           //Parse asset bundle for Icon and Sprite
-          UnityEngine.Object[] images = bundle.LoadAll(typeof(Texture2D));
+		  UnityEngine.Object[] images = bundle.LoadAllAssets(typeof(Texture2D));
           Texture2D icon = null, sprite = null;
           for (int i = 0; i < images.Length; i++)
           {
