@@ -1,0 +1,34 @@
+ManifestFileVersion: 0
+CRC: 1059141900
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: b96f93d255b5feb8559cf793461c9b79
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: cfa37d78c03802772a7e52b8f8b3f5a8
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+Assets:
+- Assets/Characters/Bobby/Bobby_Icon.png
+- Assets/Characters/Bobby/Bobby_Sprite.png
+- Assets/Characters/Bobby/Bobby.prefab
+Dependencies: []

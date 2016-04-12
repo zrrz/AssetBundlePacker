@@ -65,8 +65,6 @@ public class ExportAssetBundles {
 
 		AssetDatabase.Refresh();
 
-		Debug.Log("Caching.spaceOccupied " + Caching.spaceOccupied);
-
 		BuildPipeline.BuildAssetBundles("Assets/AssetBundles", encryptedBuildMap, BuildAssetBundleOptions.None, BuildTarget.StandaloneWindows);
 	}
 }

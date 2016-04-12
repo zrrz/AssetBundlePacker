@@ -1,0 +1,16 @@
+ManifestFileVersion: 0
+CRC: 2224619031
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 1c841ce21d8455f6b1d16cec5e42461c
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 1033bf7ddfd4c6d43e7a6382c0a0a61a
+HashAppended: 0
+ClassTypes:
+- Class: 49
+  Script: {instanceID: 0}
+Assets:
+- Assets/AssetBundles/Unencrypted/Ringo.bytes
+Dependencies: []
