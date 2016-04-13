@@ -278,8 +278,6 @@ public class AssetBundleManager : MonoBehaviour {
 	}
 
 	void DecryptBytes(byte[] toDecryptArray, ref byte[] resultArray, ref bool done) {  
-		MemoryStream stream = new MemoryStream(toDecryptArray);
-
 		byte[] keyArray = UTF8Encoding.UTF8.GetBytes("12345678901234567890123456789012");
 		// AES-256 key
 		//byte[] toDecryptArray = Convert.FromBase64String (toDecrypt);
@@ -386,12 +384,20 @@ public class AssetBundleManager : MonoBehaviour {
 						yield break;
 					}
 		
-					yield return StartCoroutine(DecryptAssetBundleContents(www.assetBundle));
-					AssetBundle bundle = decryptedAB;
+					AssetBundle bundle;
+
+					if (info.isYoutubeCharacter == 1) {
+						yield return StartCoroutine(DecryptAssetBundleContents(www.assetBundle));
+						bundle = decryptedAB; 
+					}
+					else {
+						Debug.Log("Is not YT char");
+						bundle = www.assetBundle;
+					}
 
 					//Parse asset bundle for character prefab
 					GameObject model = (GameObject)bundle.LoadAllAssets(typeof(GameObject))[0];
-					Debug.Log(bundle.LoadAllAssets(typeof(GameObject)).Length + " models in bundle");
+//					Debug.Log(bundle.LoadAllAssets(typeof(GameObject)).Length + " models in bundle");
 
 					//Parse asset bundle for Icon and Sprite
 					UnityEngine.Object[] images = bundle.LoadAllAssets(typeof(Texture2D));

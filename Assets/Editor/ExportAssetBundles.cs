@@ -7,7 +7,7 @@ using System.Security.Cryptography;
 
 public class ExportAssetBundles {
 
-	public static void ExportResource(Object[] selections) {
+	public static void ExportResource(Object[] selections, bool isYoutubeCharacter) {
 		// Create the array of bundle build details.
 		AssetBundleBuild[] buildMap = new AssetBundleBuild[1];
 		
@@ -18,18 +18,16 @@ public class ExportAssetBundles {
 		dependencies.Add(AssetDatabase.GetAssetPath(selections[1]));
 		dependencies.Add(AssetDatabase.GetAssetPath(selections[2]));
 
-//		Object[] dependencyObjs = EditorUtility.CollectDependencies(selections);
-//		foreach (Object dependency in dependencyObjs) {
-//			string path = AssetDatabase.GetAssetPath(dependency);
-//			if(!dependencies.Contains(path))
-//				dependencies.Add(path);
-//		}
-
 		buildMap[0].assetNames = dependencies.ToArray();
 
-		BuildPipeline.BuildAssetBundles("Assets/AssetBundles/Unencrypted/", buildMap, BuildAssetBundleOptions.None, BuildTarget.StandaloneWindows);
 
-		EncryptAssetBundle(selections[0].name, "Assets/AssetBundles/Unencrypted/");
+		if (isYoutubeCharacter) {
+			BuildPipeline.BuildAssetBundles("Assets/AssetBundles/Unencrypted/", buildMap, BuildAssetBundleOptions.None, BuildTarget.StandaloneWindows);
+			EncryptAssetBundle(selections[0].name, "Assets/AssetBundles/Unencrypted/");
+		}
+		else {
+			BuildPipeline.BuildAssetBundles("Assets/AssetBundles/", buildMap, BuildAssetBundleOptions.None, BuildTarget.StandaloneWindows);
+		}
 	}
 
 	/// <summary>

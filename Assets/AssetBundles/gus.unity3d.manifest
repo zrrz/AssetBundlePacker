@@ -1,16 +1,34 @@
 ManifestFileVersion: 0
-CRC: 3335397440
+CRC: 2533538795
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 60e38cf51b54e49620d4c8cda75db1f2
+    Hash: 64e02727438f565a858155ef5b0abd50
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 1033bf7ddfd4c6d43e7a6382c0a0a61a
+    Hash: cfa37d78c03802772a7e52b8f8b3f5a8
 HashAppended: 0
 ClassTypes:
-- Class: 49
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 137
   Script: {instanceID: 0}
 Assets:
-- Assets/AssetBundles/Unencrypted/Gus.bytes
+- Assets/Characters/Gus/Gus.prefab
+- Assets/Characters/Gus/Gus_Sprite.png
+- Assets/Characters/Gus/Gus_Icon.png
 Dependencies: []

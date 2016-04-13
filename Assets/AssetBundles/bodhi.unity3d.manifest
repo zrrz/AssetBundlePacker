@@ -1,16 +1,34 @@
 ManifestFileVersion: 0
-CRC: 884300244
+CRC: 337549875
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: b18593aa22d244443b85070fc5c50bd0
+    Hash: 3ef4a2e9a8dfa1d9b925d30c662dd4d4
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 1033bf7ddfd4c6d43e7a6382c0a0a61a
+    Hash: cfa37d78c03802772a7e52b8f8b3f5a8
 HashAppended: 0
 ClassTypes:
-- Class: 49
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 137
   Script: {instanceID: 0}
 Assets:
-- Assets/AssetBundles/Unencrypted/Bodhi.bytes
+- Assets/Characters/Bodhi/Bodhi_Icon.png
+- Assets/Characters/Bodhi/Bodhi_Sprite.png
+- Assets/Characters/Bodhi/Bodhi.prefab
 Dependencies: []

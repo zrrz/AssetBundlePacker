@@ -2,5 +2,5 @@ ManifestFileVersion: 0
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
-      Name: zell.unity3d
+      Name: moo.unity3d
       Dependencies: {}

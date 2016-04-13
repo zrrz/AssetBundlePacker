@@ -1,16 +1,34 @@
 ManifestFileVersion: 0
-CRC: 2224619031
+CRC: 218945866
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 1c841ce21d8455f6b1d16cec5e42461c
+    Hash: 7f53cf8ea77c648503771739ec6931da
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 1033bf7ddfd4c6d43e7a6382c0a0a61a
+    Hash: cfa37d78c03802772a7e52b8f8b3f5a8
 HashAppended: 0
 ClassTypes:
-- Class: 49
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 137
   Script: {instanceID: 0}
 Assets:
-- Assets/AssetBundles/Unencrypted/Ringo.bytes
+- Assets/Characters/Ringo/Ringo_Icon.png
+- Assets/Characters/Ringo/Ringo.prefab
+- Assets/Characters/Ringo/Ringo_Sprite.png
 Dependencies: []

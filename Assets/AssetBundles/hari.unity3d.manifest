@@ -1,16 +1,34 @@
 ManifestFileVersion: 0
-CRC: 3525132768
+CRC: 941615412
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 01b03107842ef24fca3803a9c37261d5
+    Hash: 757fb96dfd5e554d0cf93eb35e1fa9c6
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 1033bf7ddfd4c6d43e7a6382c0a0a61a
+    Hash: cfa37d78c03802772a7e52b8f8b3f5a8
 HashAppended: 0
 ClassTypes:
-- Class: 49
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 137
   Script: {instanceID: 0}
 Assets:
-- Assets/AssetBundles/Unencrypted/Hari.bytes
+- Assets/Characters/Hari/Hari_Sprite.png
+- Assets/Characters/Hari/Hari.prefab
+- Assets/Characters/Hari/Hari_Icon.png
 Dependencies: []
