@@ -13,7 +13,7 @@ public class AssetBundlePacker : EditorWindow {
 
 //	ExportAssetBundles.CharacterType characterType;
 
-	[MenuItem("AssetBundlePacker/GUI")]
+	[MenuItem("3BlackDot/AssetBundlePacker")]
 	public static void ShowWindow() {
 		EditorWindow.GetWindow(typeof(AssetBundlePacker));
 	}

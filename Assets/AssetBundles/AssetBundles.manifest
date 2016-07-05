@@ -1,6 +1,7 @@
 ManifestFileVersion: 0
+CRC: 4260744229
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
-      Name: zell.unity3d
+      Name: miniladd.unity3d
       Dependencies: {}

@@ -17,6 +17,7 @@ public class ExportAssetBundles {
 		dependencies.Add(AssetDatabase.GetAssetPath(selections[0]));
 		dependencies.Add(AssetDatabase.GetAssetPath(selections[1]));
 		dependencies.Add(AssetDatabase.GetAssetPath(selections[2]));
+//		dependencies.Add(AssetDatabase.GetAssetPath(selections[0]).Replace(".prefab", "_Arms.prefab"));
 
 		buildMap[0].assetNames = dependencies.ToArray();
 

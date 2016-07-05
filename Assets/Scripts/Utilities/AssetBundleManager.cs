@@ -391,7 +391,6 @@ public class AssetBundleManager : MonoBehaviour {
 						bundle = decryptedAB; 
 					}
 					else {
-						Debug.Log("Is not YT char");
 						bundle = www.assetBundle;
 					}
 
@@ -412,12 +411,7 @@ public class AssetBundleManager : MonoBehaviour {
 					}
 
 					characterBundles.Add(new CharacterBundle(model, icon, sprite, info.isYoutubeCharacter > 0));
-					Debug.Log(model.name + " loaded");
-//          Debug.Log(
-//            characterBundles[characterBundles.Count - 1].model.name + "loaded with " + 
-//            characterBundles[characterBundles.Count - 1].icon.name + "and " + 
-//            characterBundles[characterBundles.Count - 1].sprite.name
-//            );
+
 					// Unload the AssetBundles compressed contents to conserve memory
 					//bundle.Unload(false); //TODO unload later
 				}

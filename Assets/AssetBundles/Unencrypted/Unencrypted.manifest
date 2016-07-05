@@ -1,6 +1,7 @@
 ManifestFileVersion: 0
+CRC: 2059795966
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
-      Name: moo.unity3d
+      Name: miniladd.unity3d
       Dependencies: {}
