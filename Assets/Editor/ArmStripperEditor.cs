@@ -7,11 +7,8 @@ using System.Collections.Generic;
 public class ArmStripperEditor : EditorWindow {
 
 	bool selectingBody = false;
-//	bool dragging = false;
-//	Vector2 startPos; 
-//	Vector2 currentPos;
 
-	GameObject character;
+	public static GameObject character;
 
 	Vector3 selectionCenter;
 	Quaternion selectionRotation;
@@ -20,6 +17,100 @@ public class ArmStripperEditor : EditorWindow {
 	[MenuItem("3BlackDot/ArmStripper")]
 	public static void ShowWindow() {
 		EditorWindow.GetWindow(typeof(ArmStripperEditor));
+	}
+
+	[MenuItem("3BlackDot/StripArms - No GUI")]
+	public static void StripArmsQuick() {
+		GameObject target = Selection.activeGameObject;
+		if (target == null) {
+			Debug.Log("No GameObject selected");
+		}
+		if (!ValidateMixamoCharacter(target)) {
+			Debug.Log("Not a Mixamo Character");
+			return;
+		}
+
+
+//		Object parentObject = PrefabUtility.GetPrefabParent(character); 
+//		string characterPath = AssetDatabase.GetAssetPath(parentObject);
+//		string modelPath = AssetDatabase.GetAssetPath(AssetDatabase.LoadAssetAtPath<GameObject>(characterPath).GetComponentInChildren<SkinnedMeshRenderer>().sharedMesh);
+
+//		string modelArmsPath = modelPath.Replace(".fbx", "_Arms.fbx");
+//		if (!AssetDatabase.CopyAsset(modelPath, modelArmsPath)) {
+//			Debug.LogError("Couldn't copy asset");
+//			return;
+//		}
+
+//		AssetDatabase.Refresh();
+
+//		GameObject newMesh = (GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<GameObject>(modelArmsPath));
+
+		//		SkinnedMeshRenderer[] oldMeshRenderers = character.GetComponentsInChildren<SkinnedMeshRenderer>();
+		//		SkinnedMeshRenderer[] newMeshRenderers = newMesh.GetComponentsInChildren<SkinnedMeshRenderer>();
+
+		//		for (int i = 0; i < oldMeshRenderers.Length; i++) {
+		//			bool meshUpdated = false;
+		//			for (int j = 0; j < newMeshRenderers.Length; j++) {
+		//				if (oldMeshRenderers[i].name == newMeshRenderers[j].name) {
+		//					oldMeshRenderers[i].sharedMesh = newMeshRenderers[j].sharedMesh;
+		//					meshUpdated = true;
+		//					break;
+		//				}
+		//			}
+		//			if (!meshUpdated)
+		//				Debug.Log("Couldn't update mesh on: " + oldMeshRenderers[i].name);
+		//		}
+
+		SetTPose(target);
+
+		Vector3 size = new Vector3(0.5f, 5f, 0.5f);
+
+		Bounds bounds = new Bounds(target.transform.position + Vector3.up, size);
+		SkinnedMeshRenderer[] skinnedMeshRenderers = target.GetComponentsInChildren<SkinnedMeshRenderer>();
+		foreach (SkinnedMeshRenderer skinnedMeshRenderer in skinnedMeshRenderers) {
+			List<int> triangleList = new List<int>();
+			List<Vector3> vertList = new List<Vector3>();
+			List<Vector2> uvList = new List<Vector2>();
+			List<Vector3> normalsList = new List<Vector3>();
+
+			Mesh mesh = skinnedMeshRenderer.sharedMesh;
+			Vector3[] vertices = mesh.vertices;
+
+			for (int i = 0; i < vertices.Length; i++) {
+				vertList.Add (vertices[i]); 
+				uvList.Add (mesh.uv[i]);
+				normalsList.Add (mesh.normals[i]);
+			}
+
+			int[] triangles = mesh.triangles;
+			for (int i = 0; i < triangles.Length; i += 3) {
+				if (bounds.Contains(vertices[triangles[i]]) && bounds.Contains(vertices[triangles[i + 1]]) && bounds.Contains(vertices[triangles[i + 2]])) {
+					//In selection
+				}
+				else {
+					triangleList.Add(triangles[i]);
+					triangleList.Add(triangles[i + 1]);
+					triangleList.Add(triangles[i + 2]);
+				}
+			}
+
+			mesh.triangles = triangleList.ToArray();
+			mesh.vertices = vertList.ToArray();
+			mesh.uv = uvList.ToArray();
+			mesh.normals = normalsList.ToArray();
+
+			mesh.RecalculateNormals();
+			mesh.RecalculateBounds();
+		}
+
+//		AssetDatabase.SaveAssets();
+
+//		PrefabUtility.RecordPrefabInstancePropertyModifications(newMesh);
+
+//		AssetDatabase.SaveAssets();
+
+		//TODO reapply old mesh to character
+		//TODO prefab the arms object
 	}
 
 	void OnGUI() {
@@ -55,11 +146,11 @@ public class ArmStripperEditor : EditorWindow {
 		}
 	}
 
-	void SetTPose(GameObject humanoid) {
+	public static void SetTPose(GameObject humanoid) {
 		if (!ValidateMixamoCharacter())
 			return;
 
-		//Reflection magic to set bind pose
+		//Reflection dark magic to set bind pose
 		System.Type assmblyType = typeof(UnityEditor.Animations.AnimatorController);
 		foreach (System.Type t in Assembly.GetAssembly(assmblyType).GetTypes()) {
 			if (t.Name.Contains("AvatarSetupTool")) {
@@ -96,26 +187,29 @@ public class ArmStripperEditor : EditorWindow {
 		return selectedVertices;
 	}
 
-	bool ValidateMixamoCharacter() {
-		if (character == null) {
+	public static bool ValidateMixamoCharacter() {
+		return ValidateMixamoCharacter(character);
+	}
+
+	public static bool ValidateMixamoCharacter(GameObject target) {
+		if (target == null) {
 			Debug.LogError("Must select a GameObject");
 			return false;
 		}
-		if (character.GetComponent<Animator>() == null) {
+		if (target.GetComponent<Animator>() == null) {
 			Debug.LogError("Must select GameObject with Animator");
 			return false;
 		}
-		Transform root = character.transform.FindChild("mixamorig:Hips");
-		if (root == null) {
-			Debug.LogError("Can't find mixamorig:Hips");
-			return false;
-		}
+		//		Transform root = character.transform.FindChild("mixamorig:Hips");
+		//		if (root == null) {
+		//			Debug.LogError("Can't find mixamorig:Hips");
+		//			return false;
+		//		}
 		return true;
 	}
 
 	void DeleteSelectedVertices() {
-
-		Object parentObject = EditorUtility.GetPrefabParent(character); 
+		Object parentObject = PrefabUtility.GetPrefabParent(character); 
 		string characterPath = AssetDatabase.GetAssetPath(parentObject);
 		string modelPath = AssetDatabase.GetAssetPath(AssetDatabase.LoadAssetAtPath<GameObject>(characterPath).GetComponentInChildren<SkinnedMeshRenderer>().sharedMesh);
 
@@ -127,19 +221,28 @@ public class ArmStripperEditor : EditorWindow {
 
 		AssetDatabase.Refresh();
 
-		GameObject newMesh = AssetDatabase.LoadAssetAtPath<GameObject>(modelArmsPath);
+		GameObject newMesh = (GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<GameObject>(modelArmsPath));
 
-		for (int i = 0; i < character.transform.childCount; i++) {
-			SkinnedMeshRenderer skinnedMeshRenderer = character.transform.GetChild(i).GetComponent<SkinnedMeshRenderer>();
-			if (skinnedMeshRenderer != null) {
-				skinnedMeshRenderer.sharedMesh = newMesh.transform.FindChild(character.transform.GetChild(i).name).GetComponent<SkinnedMeshRenderer>().sharedMesh;
-			}
-		}
+//		SkinnedMeshRenderer[] oldMeshRenderers = character.GetComponentsInChildren<SkinnedMeshRenderer>();
+//		SkinnedMeshRenderer[] newMeshRenderers = newMesh.GetComponentsInChildren<SkinnedMeshRenderer>();
 
-		SetTPose(character);
+//		for (int i = 0; i < oldMeshRenderers.Length; i++) {
+//			bool meshUpdated = false;
+//			for (int j = 0; j < newMeshRenderers.Length; j++) {
+//				if (oldMeshRenderers[i].name == newMeshRenderers[j].name) {
+//					oldMeshRenderers[i].sharedMesh = newMeshRenderers[j].sharedMesh;
+//					meshUpdated = true;
+//					break;
+//				}
+//			}
+//			if (!meshUpdated)
+//				Debug.Log("Couldn't update mesh on: " + oldMeshRenderers[i].name);
+//		}
 
-		Bounds bounds = new Bounds(character.transform.position + selectionCenter, selectionSize);
-		SkinnedMeshRenderer[] skinnedMeshRenderers = character.GetComponentsInChildren<SkinnedMeshRenderer>();
+		SetTPose(newMesh);
+
+		Bounds bounds = new Bounds(newMesh.transform.position + selectionCenter, selectionSize);
+		SkinnedMeshRenderer[] skinnedMeshRenderers = newMesh.GetComponentsInChildren<SkinnedMeshRenderer>();
 		foreach (SkinnedMeshRenderer skinnedMeshRenderer in skinnedMeshRenderers) {
 			List<int> triangleList = new List<int>();
 			List<Vector3> vertList = new List<Vector3>();
@@ -178,7 +281,12 @@ public class ArmStripperEditor : EditorWindow {
 
 		AssetDatabase.SaveAssets();
 
-		//TODO cleanup old character
+		PrefabUtility.RecordPrefabInstancePropertyModifications(newMesh);
+
+		AssetDatabase.SaveAssets();
+
+		//TODO reapply old mesh to character
+		//TODO prefab the arms object
 	}
 
 	void OnFocus() {
