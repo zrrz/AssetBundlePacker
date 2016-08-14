@@ -1,7 +1,7 @@
 ManifestFileVersion: 0
-CRC: 2059795966
+CRC: 264162583
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
-      Name: miniladd.unity3d
+      Name: nogla.unity3d
       Dependencies: {}

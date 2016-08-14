@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 331083424
+CRC: 100172237
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 6da7455c8be19759ed93e3ad87308b5a
+    Hash: 7ec810065552a7d8268cb86dca150a41
   TypeTreeHash:
     serializedVersion: 2
     Hash: cfa37d78c03802772a7e52b8f8b3f5a8
@@ -28,7 +28,7 @@ ClassTypes:
 - Class: 137
   Script: {instanceID: 0}
 Assets:
-- Assets/Characters/Mini/MiniLadd_Icon.png
 - Assets/Characters/Mini/MiniLadd.prefab
+- Assets/Characters/Mini/MiniLadd_Icon.png
 - Assets/Characters/Mini/MiniLadd_Sprite.png
 Dependencies: []
