@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2956160621
+CRC: 873616491
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 2ff645ebbc0aaac624d17c0072e9d97f
+    Hash: d7040dc4501a18df4201a5af9a5ae827
   TypeTreeHash:
     serializedVersion: 2
-    Hash: cfa37d78c03802772a7e52b8f8b3f5a8
+    Hash: becf26bdd57746d2426d5f0f3e3c9eda
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -21,6 +21,8 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 48
   Script: {instanceID: 0}
+- Class: 83
+  Script: {instanceID: 0}
 - Class: 90
   Script: {instanceID: 0}
 - Class: 95
@@ -28,7 +30,14 @@ ClassTypes:
 - Class: 137
   Script: {instanceID: 0}
 Assets:
+- Assets/Characters/Moo/VO/Moo_VO_Hahaha.ogg
+- Assets/Characters/Moo/VO/Moo_VO_Guessagain.ogg
 - Assets/Characters/Moo/Moo_Sprite.png
-- Assets/Characters/Moo/Moo_Icon.png
 - Assets/Characters/Moo/Moo.prefab
+- Assets/Characters/Moo/VO/Moo_VO_Nope.ogg
+- Assets/Characters/Moo/VO/Moo_VO_Wrong.ogg
+- Assets/Characters/Moo/VO/Moo_VO_Getlost.ogg
+- Assets/Characters/Moo/Moo_Icon.png
+- Assets/Characters/Moo/VO/Moo_VO_Nope2.wav
+- Assets/Characters/Moo/VO/Moo_VO_Suckit.ogg
 Dependencies: []

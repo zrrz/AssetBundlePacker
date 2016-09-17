@@ -7,7 +7,7 @@ using System.Security.Cryptography;
 
 public class ExportAssetBundles {
 
-	public static void ExportResource(Object[] selections, bool isYoutubeCharacter) {
+	public static void ExportResource(Object[] selections, bool isYoutubeCharacter, List<AudioClip> taunts) {
 		// Create the array of bundle build details.
 		AssetBundleBuild[] buildMap = new AssetBundleBuild[1];
 		
@@ -17,6 +17,9 @@ public class ExportAssetBundles {
 		dependencies.Add(AssetDatabase.GetAssetPath(selections[0]));
 		dependencies.Add(AssetDatabase.GetAssetPath(selections[1]));
 		dependencies.Add(AssetDatabase.GetAssetPath(selections[2]));
+		for(int i = 0; i < taunts.Count; i++) {
+			dependencies.Add(AssetDatabase.GetAssetPath(taunts[i]));
+		}
 //		dependencies.Add(AssetDatabase.GetAssetPath(selections[0]).Replace(".prefab", "_Arms.prefab"));
 
 		buildMap[0].assetNames = dependencies.ToArray();

@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 100172237
+CRC: 1421539175
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 7ec810065552a7d8268cb86dca150a41
+    Hash: ac09f2fe1b459594b8184f2800a8d502
   TypeTreeHash:
     serializedVersion: 2
-    Hash: cfa37d78c03802772a7e52b8f8b3f5a8
+    Hash: becf26bdd57746d2426d5f0f3e3c9eda
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -21,6 +21,8 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 48
   Script: {instanceID: 0}
+- Class: 83
+  Script: {instanceID: 0}
 - Class: 90
   Script: {instanceID: 0}
 - Class: 95
@@ -28,7 +30,22 @@ ClassTypes:
 - Class: 137
   Script: {instanceID: 0}
 Assets:
-- Assets/Characters/Mini/MiniLadd.prefab
+- Assets/Characters/Mini/VO/Mini_VO_Nosir.ogg
+- Assets/Characters/Mini/VO/Mini_VO_Nonottoday.ogg
+- Assets/Characters/Mini/VO/Mini_VO2_NobodyLikesYouGoAwayPlease.ogg
+- Assets/Characters/Mini/VO/Mini_VO_Hahahseeyasuckah.ogg
+- Assets/Characters/Mini/VO/Mini_VO2_IfWeCouldGetTheGuyToNot.ogg
 - Assets/Characters/Mini/MiniLadd_Icon.png
 - Assets/Characters/Mini/MiniLadd_Sprite.png
+- Assets/Characters/Mini/VO/Mini_VO2_Okifwecannotdothatagain.ogg
+- Assets/Characters/Mini/VO/Mini_VO_Seeya.ogg
+- Assets/Characters/Mini/VO/Mini_VO2_CouldYouJustNotPlease.ogg
+- Assets/Characters/Mini/VO/Mini_VO_Bahbyeseeyalater.ogg
+- Assets/Characters/Mini/VO/Mini_VO2_Didnthaveachance.ogg
+- Assets/Characters/Mini/VO/Mini_VO_Hahahahahaha.ogg
+- Assets/Characters/Mini/VO/Mini_VO2_HahDidntHaveAChance.ogg
+- Assets/Characters/Mini/MiniLadd.prefab
+- Assets/Characters/Mini/VO/Mini_VO_Imnottheoneyouwant.ogg
+- Assets/Characters/Mini/VO/Mini_VO_Nahdontevenworryaboutit.ogg
+- Assets/Characters/Mini/VO/Mini_VO2_HowthehelldidIlosehim.ogg
 Dependencies: []
