@@ -1,7 +1,7 @@
 ManifestFileVersion: 0
-CRC: 1903080004
+CRC: 3082235326
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
-      Name: terrorizer.unity3d
+      Name: miniladd.unity3d
       Dependencies: {}

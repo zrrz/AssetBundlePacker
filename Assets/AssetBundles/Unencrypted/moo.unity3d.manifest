@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1365239560
+CRC: 2283478921
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 78647da7dd0852e4a55b1c9ae004b45b
+    Hash: fff58e1eeb7f818d2d15e55b20150c5f
   TypeTreeHash:
     serializedVersion: 2
     Hash: becf26bdd57746d2426d5f0f3e3c9eda
@@ -31,13 +31,13 @@ ClassTypes:
   Script: {instanceID: 0}
 Assets:
 - Assets/Characters/Moo/VO/Moo_VO_Hahaha.ogg
+- Assets/Characters/Moo/Moo_Icon.png
 - Assets/Characters/Moo/VO/Moo_VO_Guessagain.ogg
-- Assets/Characters/Moo/Moo_Sprite.png
 - Assets/Characters/Moo/Moo.prefab
 - Assets/Characters/Moo/VO/Moo_VO_Nope.ogg
 - Assets/Characters/Moo/VO/Moo_VO_Wrong.ogg
 - Assets/Characters/Moo/VO/Moo_VO_Getlost.ogg
-- Assets/Characters/Moo/Moo_Icon.png
 - Assets/Characters/Moo/VO/Moo_VO_Nope2.wav
+- Assets/Characters/Moo/Moo_Sprite.png
 - Assets/Characters/Moo/VO/Moo_VO_Suckit.ogg
 Dependencies: []

@@ -32,6 +32,8 @@ public class ExportAssetBundles {
 		else {
 			BuildPipeline.BuildAssetBundles("Assets/AssetBundles/", buildMap, BuildAssetBundleOptions.None, BuildTarget.StandaloneWindows);
 		}
+
+		Debug.Log("Succesfully built " + selections[0].name);
 	}
 
 	/// <summary>
