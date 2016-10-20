@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3794333861
+CRC: 2764088507
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: e5ba0dbac243df5483d62b102da76938
+    Hash: 37a16b2b191990226d06c5a1dc57bae1
   TypeTreeHash:
     serializedVersion: 2
     Hash: 791a50b5512512f3af0b5acc34b02a8a
@@ -28,7 +28,7 @@ ClassTypes:
 - Class: 137
   Script: {instanceID: 0}
 Assets:
-- Assets/Characters/Nogla/Nogla.prefab
 - Assets/Characters/Nogla/Nogla_Icon.png
+- Assets/Characters/Nogla/Nogla.prefab
 - Assets/Characters/Nogla/Nogla_Sprite.png
 Dependencies: []

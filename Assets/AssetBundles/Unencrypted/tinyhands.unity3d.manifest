@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 89185803
+CRC: 96126594
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 5fcb11acf077f9a56e270d4b5b81b624
+    Hash: 9e185288b6e4641fef57530c21b7e867
   TypeTreeHash:
     serializedVersion: 2
     Hash: 791a50b5512512f3af0b5acc34b02a8a
@@ -28,7 +28,7 @@ ClassTypes:
 - Class: 137
   Script: {instanceID: 0}
 Assets:
-- Assets/Characters/Marcel/Marcel_Icon.png
-- Assets/Characters/Marcel/Marcel.prefab
-- Assets/Characters/Marcel/Marcel_Sprite.png
+- Assets/Characters/Trump/TinyHands.prefab
+- Assets/Characters/Trump/TinyHands_Icon.png
+- Assets/Characters/Marcel/TinyHands_Sprite.png
 Dependencies: []
