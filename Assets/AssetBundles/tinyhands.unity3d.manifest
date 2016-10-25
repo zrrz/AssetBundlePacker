@@ -1,16 +1,34 @@
 ManifestFileVersion: 0
-CRC: 1354512413
+CRC: 4364311
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 0dc544ef45eb70c5873014a21050eee7
+    Hash: f611e49a7591fa85bc432d738970267b
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 1033bf7ddfd4c6d43e7a6382c0a0a61a
+    Hash: 791a50b5512512f3af0b5acc34b02a8a
 HashAppended: 0
 ClassTypes:
-- Class: 49
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 137
   Script: {instanceID: 0}
 Assets:
-- Assets/AssetBundles/Unencrypted/TinyHands.bytes
+- Assets/Characters/Trump/TinyHands.prefab
+- Assets/Characters/Trump/TinyHands_Icon.png
+- Assets/Characters/Trump/TinyHands_Sprite.png
 Dependencies: []
