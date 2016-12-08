@@ -54,8 +54,16 @@ public class AssetBundlePacker : EditorWindow {
 //		characterType = (ExportAssetBundles.CharacterType)EditorGUILayout.EnumPopup (characterType);
 
 		if(GUILayout.Button("Package Asset Bundle")) {
-			AssetDatabase.RenameAsset(AssetDatabase.GetAssetPath(icon), characterPrefab.name + "_Icon");
-			AssetDatabase.RenameAsset(AssetDatabase.GetAssetPath(sprite), characterPrefab.name + "_Sprite");
+			string err = AssetDatabase.RenameAsset(AssetDatabase.GetAssetPath(icon), characterPrefab.name + "_Icon");
+			if(err != "") {
+				Debug.LogError("Packing failed: " + err);
+				return;
+			}
+			err = AssetDatabase.RenameAsset(AssetDatabase.GetAssetPath(sprite), characterPrefab.name + "_Sprite");
+			if(err != "") {
+				Debug.LogError("Packing failed: " + err);
+				return;
+			}
 			ExportAssetBundles.ExportResource(new Object[] {characterPrefab, icon, sprite}, isYoutubeCharacter, taunts);
 		}
 	}

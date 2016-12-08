@@ -1,0 +1,34 @@
+ManifestFileVersion: 0
+CRC: 1679891101
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 444b880e7973414cdfc1b38f9c68fb25
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 791a50b5512512f3af0b5acc34b02a8a
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+Assets:
+- Assets/Characters/Wednesday/Wednesday_Icon.png
+- Assets/Characters/Wednesday/Wednesday.prefab
+- Assets/Characters/Wednesday/Wednesday_Sprite.png
+Dependencies: []

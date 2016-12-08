@@ -63,7 +63,7 @@ public class AssetBundleManager : MonoBehaviour {
 	/// url version
 	/// www.url.url/filename.unity3d 4
 	/// </summary>
-	string remoteAssetListURL = "https://s3-us-west-1.amazonaws.com/deadrealm/files.txt";
+	string remoteAssetListURL = "https://s3.amazonaws.com/dead-realm/characters/files.txt";
 
 	string localAssetListURL = "CharacterBundles/localCharacterBundles";
 
@@ -365,6 +365,8 @@ public class AssetBundleManager : MonoBehaviour {
 
 			foreach (string url in assetBundlesURLs) {
 				string[] info = url.Split(new string[] { " ", "\t" }, StringSplitOptions.RemoveEmptyEntries);
+				if (info.Length != 3)
+					continue;
 				assetBundleInfos.Add(new ABInfo(info[0], int.Parse(info[1]), int.Parse(info[2])));
 			}
 
@@ -393,6 +395,10 @@ public class AssetBundleManager : MonoBehaviour {
 					else {
 						bundle = www.assetBundle;
 					}
+
+//					foreach (UnityEngine.Object obj in bundle.LoadAllAssets()) {
+//						Debug.Log(obj.name + obj.GetType());
+//					}
 
 					//Parse asset bundle for character prefab
 					GameObject model = (GameObject)bundle.LoadAllAssets(typeof(GameObject))[0];
